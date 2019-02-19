@@ -138,13 +138,10 @@
                 editTodo(data.document, ids.todoID, ids.editID);
                 deleteTodo(data.document, ids.listItemID, ids.deleteID);
                 displayMessage(true, data.msg);
-              } else {
-                displayMessage(false, data.msg);
-              }
-
-              resetTodoInput();
+              } 
+            } else {
+              displayMessage(false, data.msg);
             }
-            
             resetTodoInput();
           });
         })

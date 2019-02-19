@@ -46,9 +46,10 @@ app.post('/', (req, res, next) => {
 
 	Joi.validate(userInput, schema, (err, result)=>{
 		if (err) {
-			const error = new Error("Invalid Input");
-			error.status = 400;
-			next(error);
+			// const error = new Error("Invalid Input");
+			// error.status = 400;
+			// next(error);
+			res.json({msg : "Invalid Input", error : true});
 		} else {
 			db.getDB().collection(collection).insertOne(userInput, (err, result) => {
 				if (err) {
